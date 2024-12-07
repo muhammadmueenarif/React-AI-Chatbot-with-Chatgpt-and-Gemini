@@ -18,45 +18,37 @@ function App() {
 }
 
 const MESSAGES =[ {
-  role: 'user',
-  content: 'Hello',
+  role: "user",
+  content: "Hello"
 }, 
   {
-    role: 'assistant',
-    content: 'Hey what can I assist you with?',
+    role: "assistant",
+    content: "Hey what can I assist you with?"
   },
   {
-    role: 'user',
-    content: 'Hello',
+    role: "user",
+    content: "How are you?"
   }, 
     {
-      role: 'assistant',
-      content: 'Hey what can I assist you with?',
+      role: "assistant",
+      content: "I am a chatbot and don't have feelings. I am here to help you"
     },
     {
-      role: 'user',
-      content: 'Hello',
+      role: "user",
+      content: "How can you help me?"
     }, 
       {
-        role: 'assistant',
-        content: 'Hey what can I assist you with?',
+        role: "assistant",
+        content: "I can help you in all matters where you need."
       },
       {
-        role: 'user',
-        content: 'Hello',
+        role: "user",
+        content: "can you help in coding?"
       }, 
         {
-          role: 'assistant',
-          content: 'Hey what can I assist you with?',
-        },
-        {
-          role: 'user',
-          content: 'Hello',
-        }, 
-          {
-            role: 'assistant',
-            content: 'Hey what can I assist you with?',
-          },
+          role: "assistant",
+          content: "Yes of course. I can help you in coding and all other related fields also."
+        }
 ]
 
 export default App
