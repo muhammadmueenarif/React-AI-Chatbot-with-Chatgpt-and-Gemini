@@ -29,3 +29,15 @@ you can learn about it on vite.dev/guide/env-and-mode#env-files.
 create another file .env.example which will give instruction that what variables developer need to use if 
 anyone else want to work with this project. it will have same variables but will not have actual api key but just
 some dynamic text. 
+
+now we will learn how to connect google assistant with our chatbot. check documentation here. 
+ai.google.dev/gemini-api/docs/text-generation?lang=node#chat
+
+first we install google ai library by npm package. then we import google generative ai and create instance of 
+this generative ai and provide api key. 
+next we create instance of model and provide model name as gemini. then we create chat. history will be empty first 
+and then will store results. and then to get it we will call chat.sendMessage(); 
+we will await keyword because api keys are asynchronous. 
+
+install the library  by npm i @google/generative-ai. once installed, check in package.json file and then 
+import in app.jsx file. 

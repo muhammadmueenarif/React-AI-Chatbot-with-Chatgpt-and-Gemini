@@ -1,3 +1,4 @@
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Chat } from './components/Chat/Chat'
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
