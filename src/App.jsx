@@ -3,7 +3,12 @@ import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
 function App() {
-  const [messages, setMessages] = useState();
+  const [messages, setMessages] = useState([]);
+
+  function handleContentSend(content) {
+    alert(content)
+  }
+
   return (
     <div className={styles.App}>
       <header className={styles.Header}>
@@ -14,7 +19,7 @@ function App() {
         {/* sending props */}
         <Chat messages={messages}/>
       </div>
-      <Controls/>
+      <Controls onSend={handleContentSend}/>
     </div>
   )
 }
