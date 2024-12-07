@@ -9,7 +9,7 @@ export function Controls({ onSend }) {
     setContent(event.target.value);
   }
 
-
+//   function to send content
   function handleContentSend() {
     if (content.length >0 ) {
         onSend(content)
@@ -17,11 +17,19 @@ export function Controls({ onSend }) {
     }
   }
 
+  //function to send user msg if he press enter btn. 
+  function handleEnterPress(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        handleContentSend();
+    }
+  }
     return (
         <div className={styles.Controls}>
             <div className={styles.TextAreaContainer}>
                 <textarea className={styles.TextArea} placeholder="Message AI Chatbot" 
-                value={content} onChange={handleContentChanges}/>
+                value={content} onChange={handleContentChanges}
+                onKeyDown={handleEnterPress}/>
             </div>
             <button className={styles.Button} onClick={handleContentSend}>
                 <SendIcon/>
