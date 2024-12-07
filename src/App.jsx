@@ -5,8 +5,9 @@ import { useState } from 'react'
 function App() {
   const [messages, setMessages] = useState([]);
 
+  // function to save message in chatbox screen on browser
   function handleContentSend(content) {
-    alert(content)
+    setMessages((prevMessages) => [...prevMessages, {content, role:'user'}])
   }
 
   return (
@@ -19,6 +20,7 @@ function App() {
         {/* sending props */}
         <Chat messages={messages}/>
       </div>
+      {/* on send is a prop */}
       <Controls onSend={handleContentSend}/>
     </div>
   )

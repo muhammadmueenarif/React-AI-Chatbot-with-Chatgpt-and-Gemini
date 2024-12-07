@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './Controls.module.css'
+// onsend is a prop
 export function Controls({ onSend }) {
  
   const [content, setContent] = useState("");
