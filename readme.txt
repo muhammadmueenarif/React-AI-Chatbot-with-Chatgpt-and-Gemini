@@ -14,3 +14,7 @@ framework react, and then javascript language.
 next we need to open in that folder in terminal and then install dependency. use npm install and then npm run dev. 
 it will open project on local host 5173. 
 >>>>>>> 49d0564 (install dependency)
+
+
+next delete the asset folder in src, and delete the img of vite in public folder. delete app.css and 
+clean code in app.jsx file. in index.css, remove extra code of a, h1, button and other tags. 
