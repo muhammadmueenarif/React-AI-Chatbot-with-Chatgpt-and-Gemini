@@ -1,4 +1,5 @@
 import { Chat } from './components/Chat/Chat'
+import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
 function App() {
@@ -13,6 +14,7 @@ function App() {
         {/* sending props */}
         <Chat messages={messages}/>
       </div>
+      <Controls/>
     </div>
   )
 }
