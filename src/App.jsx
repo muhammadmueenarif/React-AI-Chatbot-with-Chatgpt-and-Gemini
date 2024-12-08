@@ -8,7 +8,8 @@ import { Loader } from './components/Loader/Loader';
 function App() {
   const assistant = new Assistant()
   const [messages, setMessages] = useState([]);
-
+  //for loader
+  const [isLoading, setIsLoading] = useState(false);
 
   function addMessage(message) {
     setMessages((prevMessages) => [...prevMessages, message])
@@ -27,8 +28,9 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Loader/>
-      
+      {/* bydefault will not display */}
+      {isLoading && <Loader/> }
+
       <header className={styles.Header}>
         <img className={styles.Logo} src="/chat-bot.png" />
         <h2 className={styles.Title}>AI Chatbot</h2>
