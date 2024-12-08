@@ -2,7 +2,8 @@ import { useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
 import styles from './Controls.module.css'
 // onsend is a prop
-export function Controls({ onSend }) {
+//when loading, the input will be disabled by isDisabled props.by default it is false
+export function Controls({ isDisabled=false,onSend }) {
  
   const [content, setContent] = useState("");
 
@@ -31,9 +32,9 @@ export function Controls({ onSend }) {
                 <TextareaAutosize className={styles.TextArea} placeholder="Message AI Chatbot" 
                 value={content} onChange={handleContentChanges}
                 onKeyDown={handleEnterPress}
-                minRows={1} maxRows={4}/>
+                minRows={1} maxRows={4} disabled={isDisabled}/>
             </div>
-            <button className={styles.Button} onClick={handleContentSend}>
+            <button className={styles.Button} disabled={isDisabled} onClick={handleContentSend}>
                 <SendIcon/>
             </button>
         </div>

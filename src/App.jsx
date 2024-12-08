@@ -42,8 +42,9 @@ function App() {
         {/* sending props */}
         <Chat messages={messages} />
       </div>
-      {/* on send is a prop */}
-      <Controls onSend={handleContentSend} />
+      {/* on send is a prop */} 
+      {/* isDisabled when ai is writing response */}
+      <Controls isDisabled={isLoading} onSend={handleContentSend} />
     </div>
   )
 }

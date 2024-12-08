@@ -61,3 +61,5 @@ next we will learn how to make textarea auto resizeable. when user type text our
 text-area autoresize library so when user type he can see full text. 
 first install it npm i react-textarea-autosize 
 import it and just use with tag. set min and maxrows in textarea. 
+
+next is to disable chat control during response is laoding. user should not be able to type text when loading. 
