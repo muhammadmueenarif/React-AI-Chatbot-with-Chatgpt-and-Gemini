@@ -1,5 +1,5 @@
 import { Chat } from './components/Chat/Chat'
-import { Assistant } from './assistant/googleai';
+import { Assistant } from './assistant/openai';
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
@@ -17,7 +17,7 @@ function App() {
   async function handleContentSend(content) {
     addMessage({ content, role: "user" })
     try {
-      const result = await assistant.chat(content);
+      const result = await assistant.chat(content, messages);
       addMessage({ content:result, role: "assistant" })
     } catch (error) {
       addMessage({ content:"Sorry! We couldn't process your request. Please try again", role: "system" })
