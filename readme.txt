@@ -55,3 +55,4 @@ and then select the loader that you want and integrate its css. you can do custo
 next is how to add markdown support to our chatbot. chatbot is answering without proper formatting like bullet 
 lists and symbols. we need to install markdown in our project and then import its components. 
 npm i react-markdown
+then wrap {content} inside it and hence we can get proper response. 
