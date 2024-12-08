@@ -24,7 +24,17 @@ function App() {
     //this is for loader
     setIsLoading(true)
     try {
-      const result = await assistant.chat(content);
+      const result = await assistant.chatStream(content);
+      let isFirstChunk = false;
+      // use loop with await to save result in form of chunks.
+      for await (const chunk of result) {
+        if (!isFirstChunk) {
+          isFirstChunk = true;
+          addMessage({content:"", role:"assistant"})
+          setIsLoading(false);
+        }
+      }
+
     } catch (error) {
       addMessage({ content: "Sorry! We couldn't process your request. Please try again", role: "system" })
     }
