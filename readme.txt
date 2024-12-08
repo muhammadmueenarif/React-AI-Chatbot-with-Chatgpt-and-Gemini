@@ -89,3 +89,6 @@ content of the message.
 we wil also use js generator function. it is used with special symbol and generator are together used with 
 yield statement. allow us to pass and resume execution of function till we wait on some response. it allows 
 to work with asynchronous code and handle data sequence more efficiently.    
+
+next is to connect openai for chat streaming. read documentation 
+platform.openai.com/docs/api-reference/streaming

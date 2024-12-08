@@ -1,5 +1,5 @@
 import { Chat } from './components/Chat/Chat'
-import { Assistant } from './assistant/googleai';
+import { Assistant } from './assistant/openai';
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
@@ -34,7 +34,8 @@ function App() {
     //this is for loader
     setIsLoading(true)
     try {
-      const result = await assistant.chatStream(content);
+      //we need to pass messaes as content history
+      const result = await assistant.chatStream(content, messages);
       let isFirstChunk = false;
       // use loop with await to save result in form of chunks.
       for await (const chunk of result) {
