@@ -13,26 +13,27 @@ function App() {
 
   function addMessage(message) {
     setMessages((prevMessages) => [...prevMessages, message])
-    setIsLoading(true)
   }
 
   // function to save message in chatbox screen on browser
   async function handleContentSend(content) {
+
+    // this is used for user messages
     addMessage({ content, role: "user" })
+
+    //this is for loader
+    setIsLoading(true)
     try {
-      const result = await assistant.chat(content, messages);
-      addMessage({ content:result, role: "assistant" })
+      const result = await assistant.chat(content);
     } catch (error) {
-      addMessage({ content:"Sorry! We couldn't process your request. Please try again", role: "system" })
-    } finally {
-      setIsLoading(false)
+      addMessage({ content: "Sorry! We couldn't process your request. Please try again", role: "system" })
     }
   }
 
   return (
     <div className={styles.App}>
       {/* bydefault will not display */}
-      {isLoading && <Loader/> }
+      {isLoading && <Loader />}
 
       <header className={styles.Header}>
         <img className={styles.Logo} src="/chat-bot.png" />
@@ -42,7 +43,7 @@ function App() {
         {/* sending props */}
         <Chat messages={messages} />
       </div>
-      {/* on send is a prop */} 
+      {/* on send is a prop */}
       {/* isDisabled when ai is writing response */}
       <Controls isDisabled={isLoading} onSend={handleContentSend} />
     </div>
