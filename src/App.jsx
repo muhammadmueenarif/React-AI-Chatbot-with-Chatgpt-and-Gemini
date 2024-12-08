@@ -10,6 +10,8 @@ function App() {
   const [messages, setMessages] = useState([]);
   //for loader
   const [isLoading, setIsLoading] = useState(false);
+  //for streaming
+  const [isStreaming, setIsStreaming] = useState(false)
 
   //to update last msg content use this function. 
   function updateLastMessageContent(content) {
@@ -43,13 +45,20 @@ function App() {
           //complete response is wriiten. 
           addMessage({ content: "", role: "assistant" })
           setIsLoading(false);
+
+          //streaming of chatbot start and off outside the loop
+          setIsStreaming(true);
         }
         updateLastMessageContent(chunk)
       }
+      //streaming is off.
+      setIsStreaming(false)
 
     } catch (error) {
       addMessage({ content: "Sorry! We couldn't process your request. Please try again", role: "system" })
       setIsLoading(false)
+      //if we get first chunk but need second chunk and it crashed so we off it here also. 
+      setIsStreaming(false)
     }
   }
 
@@ -68,7 +77,8 @@ function App() {
       </div>
       {/* on send is a prop */}
       {/* isDisabled when ai is writing response */}
-      <Controls isDisabled={isLoading} onSend={handleContentSend} />
+      {/* isStreaming passed to disable the control */}
+      <Controls isDisabled={isLoading || isStreaming} onSend={handleContentSend} />
     </div>
   )
 }
