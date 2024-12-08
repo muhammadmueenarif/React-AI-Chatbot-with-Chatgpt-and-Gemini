@@ -76,3 +76,16 @@ Next we will add dark mode support. we will use light-dark css color function th
 that whether it is in white mode or dark mode. we just need to give two colors as props. first for light, and 
 second for dark mode.
 another feature to use is prefer color scheme. it is used to detect if user has light or dark mode. 
+
+next we will eneble chat streaming in chatbot. how it generate response for us. like when we say it generate 
+small and if we ask it generate large text with different paragraphs. read documentation how to enable chat 
+streaming in gemini. below is link. 
+ai.google.dev/gemini-api/docs/text-generation?lang=node#chat-streaming
+developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators#generator_functions
+
+we will need to use sendMessageStream function in our googleai.js file. we will need loop for result.stream. 
+also we will wait for asynchronous function. we will save every result into chunk and use chunk.text() to get 
+content of the message. 
+we wil also use js generator function. it is used with special symbol and generator are together used with 
+yield statement. allow us to pass and resume execution of function till we wait on some response. it allows 
+to work with asynchronous code and handle data sequence more efficiently.    
