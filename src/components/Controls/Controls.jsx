@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
 import styles from './Controls.module.css'
 // onsend is a prop
 //when loading, the input will be disabled by isDisabled props.by default it is false
 export function Controls({ isDisabled=false,onSend }) {
- 
+  // useref for when chatbot response is complete, input will be focused automatically. 
+  const textAreaRef = useRef(null); 
   const [content, setContent] = useState("");
 
+  // use effect also for auto focus on input. 
+  useEffect(() => {
+    if(!disabled) {
+      textAreaRef.current.focus();
+    }
+  }, [isDisabled]);
+
+  // handle content changes and set it to state.
   function handleContentChanges(event) {
     setContent(event.target.value);
   }
@@ -29,7 +38,8 @@ export function Controls({ isDisabled=false,onSend }) {
     return (
         <div className={styles.Controls}>
             <div className={styles.TextAreaContainer}>
-                <TextareaAutosize className={styles.TextArea} placeholder="Message AI Chatbot" 
+              {/* ref for auto focus when ai response completed */}
+                <TextareaAutosize className={styles.TextArea} ref={textAreaRef} placeholder="Message AI Chatbot" 
                 value={content} onChange={handleContentChanges}
                 onKeyDown={handleEnterPress}
                 minRows={1} maxRows={4} disabled={isDisabled}/>
