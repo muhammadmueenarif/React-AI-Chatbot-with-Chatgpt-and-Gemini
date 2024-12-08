@@ -13,6 +13,7 @@ function App() {
 
   function addMessage(message) {
     setMessages((prevMessages) => [...prevMessages, message])
+    setIsLoading(true)
   }
 
   // function to save message in chatbox screen on browser
@@ -23,6 +24,8 @@ function App() {
       addMessage({ content:result, role: "assistant" })
     } catch (error) {
       addMessage({ content:"Sorry! We couldn't process your request. Please try again", role: "system" })
+    } finally {
+      setIsLoading(false)
     }
   }
 
