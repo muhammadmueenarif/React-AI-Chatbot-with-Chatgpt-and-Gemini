@@ -1,5 +1,5 @@
 import { Chat } from './components/Chat/Chat'
-import { Assistant } from './assistant/openai';
+import { Assistant } from './assistant/googleai';
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
@@ -10,6 +10,14 @@ function App() {
   const [messages, setMessages] = useState([]);
   //for loader
   const [isLoading, setIsLoading] = useState(false);
+
+  //to update last msg content use this function. 
+  function updateLastMessageContent(content) {
+    //using map function, we go through all previous msgs. if true then it will first give prev 
+    // msg content and then give next msg content and when reach to last msg then it returns complete response. 
+    setMessages((prevMessages) => prevMessages.map((message, index) => index === prevMessages.length - 1 ? { ...message, content: `${message.content}${content}` } 
+    :message ))
+  }
 
   function addMessage(message) {
     setMessages((prevMessages) => [...prevMessages, message])
@@ -30,13 +38,18 @@ function App() {
       for await (const chunk of result) {
         if (!isFirstChunk) {
           isFirstChunk = true;
-          addMessage({content:"", role:"assistant"})
+          //first message is empty and then we are updating message with chatbot response in chunks and removed 
+          //the loader after first chunk so that user can read while ai is writing instead of wawiting until the 
+          //complete response is wriiten. 
+          addMessage({ content: "", role: "assistant" })
           setIsLoading(false);
         }
+        updateLastMessageContent(chunk)
       }
 
     } catch (error) {
       addMessage({ content: "Sorry! We couldn't process your request. Please try again", role: "system" })
+      setIsLoading(false)
     }
   }
 
