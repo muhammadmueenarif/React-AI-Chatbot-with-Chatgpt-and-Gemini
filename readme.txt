@@ -41,3 +41,8 @@ we will await keyword because api keys are asynchronous.
 
 install the library  by npm i @google/generative-ai. once installed, check in package.json file and then 
 import in app.jsx file. 
+
+now we will integrate open ai api key. goto platform.openai.com/settings/organization/api-keys
+and login. and create new secret key. copy it and paste it in your env file. 
+
+platform.openai.com/docs/guides/text-generation#quickstart
