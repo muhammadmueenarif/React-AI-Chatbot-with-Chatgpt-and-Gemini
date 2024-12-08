@@ -1,16 +1,16 @@
-import { useRef, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
 import styles from './Controls.module.css'
 // onsend is a prop
 //when loading, the input will be disabled by isDisabled props.by default it is false
-export function Controls({ isDisabled=false,onSend }) {
+export function Controls({ isDisabled=false, onSend }) {
   // useref for when chatbot response is complete, input will be focused automatically. 
   const textAreaRef = useRef(null); 
   const [content, setContent] = useState("");
 
   // use effect also for auto focus on input. 
   useEffect(() => {
-    if(!disabled) {
+    if(!isDisabled) {
       textAreaRef.current.focus();
     }
   }, [isDisabled]);

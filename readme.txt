@@ -67,3 +67,6 @@ next is to disable chat control during response is laoding. user should not be a
 next is to get auto focus on our text when we response is complete. 
 
 next we implement the auto scrolling to bottom. 
+
+next is to improve auto scrolling behavior. like when we ask one question and then second it scrolls to our 
+second question. 
