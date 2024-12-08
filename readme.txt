@@ -65,3 +65,5 @@ import it and just use with tag. set min and maxrows in textarea.
 next is to disable chat control during response is laoding. user should not be able to type text when loading. 
 
 next is to get auto focus on our text when we response is complete. 
+
+next we implement the auto scrolling to bottom. 
