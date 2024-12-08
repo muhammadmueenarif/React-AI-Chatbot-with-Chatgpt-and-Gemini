@@ -45,4 +45,6 @@ import in app.jsx file.
 now we will integrate open ai api key. goto platform.openai.com/settings/organization/api-keys
 and login. and create new secret key. copy it and paste it in your env file. 
 
-platform.openai.com/docs/guides/text-generation#quickstart
+platform.openai.com/docs/guides/text-generation#quickstart. 
+
+next we will connect open ai api key and chat with its bot. first install open ai. npm i openai.
