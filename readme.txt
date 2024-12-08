@@ -71,3 +71,8 @@ next we implement the auto scrolling to bottom.
 next is to improve auto scrolling behavior. like when we ask one question and then second it scrolls to our 
 second question. it should scroll to last question. 
 we will group our questions and message together and consider that we have an array. 
+
+Next we will add dark mode support. we will use light-dark css color function that will check automatically 
+that whether it is in white mode or dark mode. we just need to give two colors as props. first for light, and 
+second for dark mode.
+another feature to use is prefer color scheme. it is used to detect if user has light or dark mode. 
