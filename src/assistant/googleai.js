@@ -13,6 +13,7 @@ export class Assistant {
     async chat(content) {
         try {
             const result = await this.#chat.sendMessage(content);
+            return result.response.text();
         } catch (error) {
             throw error;
         }
