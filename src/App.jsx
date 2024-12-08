@@ -3,6 +3,7 @@ import { Assistant } from './assistant/openai';
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'
+import { Loader } from './components/Loader/Loader';
 
 function App() {
   const assistant = new Assistant()
@@ -26,6 +27,8 @@ function App() {
 
   return (
     <div className={styles.App}>
+      <Loader/>
+      
       <header className={styles.Header}>
         <img className={styles.Logo} src="/chat-bot.png" />
         <h2 className={styles.Title}>AI Chatbot</h2>

@@ -48,3 +48,6 @@ and login. and create new secret key. copy it and paste it in your env file.
 platform.openai.com/docs/guides/text-generation#quickstart. 
 
 next we will connect open ai api key and chat with its bot. first install open ai. npm i openai.
+
+now we want to add loader to our website. goto https://css-loaders.com/dots/
+and then select the loader that you want and integrate its css. you can do custom styling with loader. 
