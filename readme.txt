@@ -60,3 +60,4 @@ then wrap {content} inside it and hence we can get proper response.
 next we will learn how to make textarea auto resizeable. when user type text our area is very small so we use 
 text-area autoresize library so when user type he can see full text. 
 first install it npm i react-textarea-autosize 
+import it and just use with tag. set min and maxrows in textarea. 
