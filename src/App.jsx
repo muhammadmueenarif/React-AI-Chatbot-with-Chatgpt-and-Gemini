@@ -1,5 +1,5 @@
 import { Chat } from './components/Chat/Chat'
-import { Assistant } from './assistant/openai';
+import { Assistant } from './assistant/googleai';
 import { Controls } from './components/Controls/Controls';
 import styles from './App.module.css'
 import { useState } from 'react'

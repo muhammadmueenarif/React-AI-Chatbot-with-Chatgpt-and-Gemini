@@ -18,20 +18,20 @@ clean code in app.jsx file. in index.css, remove extra code of a, h1, button and
 we can use google gemini api key or we can use openai chatgpt api key. 
 
 now we will have access to google ai and configure it but first get its api key. open 
-aistudio.google.com/app/apikey
+https://aistudio.google.com/app/apikey
 and click on create apikey. choose gemini api and create and we can copy our api key. 
 
 create .env.local in your project vs code and write api key there as VITE_GOOGLE_AI_API_KEY= ******* 
 
 .env is used for environment variables. we can store some secure variables here to access different services. 
-you can learn about it on vite.dev/guide/env-and-mode#env-files. 
+you can learn about it on https://vite.dev/guide/env-and-mode#env-files. 
 
 create another file .env.example which will give instruction that what variables developer need to use if 
 anyone else want to work with this project. it will have same variables but will not have actual api key but just
 some dynamic text. 
 
 now we will learn how to connect google assistant with our chatbot. check documentation here. 
-ai.google.dev/gemini-api/docs/text-generation?lang=node#chat
+https://ai.google.dev/gemini-api/docs/text-generation?lang=node#chat
 
 first we install google ai library by npm package. then we import google generative ai and create instance of 
 this generative ai and provide api key. 
@@ -45,7 +45,7 @@ import in app.jsx file.
 now we will integrate open ai api key. goto platform.openai.com/settings/organization/api-keys
 and login. and create new secret key. copy it and paste it in your env file. 
 
-platform.openai.com/docs/guides/text-generation#quickstart. 
+https://platform.openai.com/docs/guides/text-generation#quickstart. 
 
 next we will connect open ai api key and chat with its bot. first install open ai. npm i openai.
 

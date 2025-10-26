@@ -28,11 +28,12 @@ export function Chat({ messages }) {
     );
 
     // use effect for auto scrolling to get messages update
-    // ? is used because element not defined so it doesn't break the app. behavior smooth for smooth scroll
+    // "?" is used because element not defined so it doesn't break the app. behavior smooth for smooth scroll
     useEffect(() => {
         //we want to scroll when message from user is added not from assistant so we want to get last msg 
         //of user and implement scroll behavior on it.
         const lastMessage = messages[messages.length - 1]
+        
         //? used with condition if there is no msg
         if (lastMessage?.role === 'user') {
             messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
